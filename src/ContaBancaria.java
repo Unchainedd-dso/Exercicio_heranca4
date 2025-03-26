@@ -32,7 +32,7 @@ public class ContaBancaria{
     }
 
     public boolean retirada(double valor){
-        if(valor >= saldo){
+        if(valor <= saldo){
             saldo -= valor;
             return true;
         }
