@@ -1,7 +1,7 @@
 public class ContaBancaria{
-    int numeroConta;
-    String nomeCorrentista;
-    double saldo;
+    protected int numeroConta;
+    protected String nomeCorrentista;
+    protected double saldo;
 
     public ContaBancaria(int numeroConta, String nomeCorrentista){
         this.numeroConta = numeroConta;
