@@ -38,13 +38,14 @@ public class ContaComLimite extends ContaBancaria{
                 // Digamos que o saldo seja de 300, e o valor seja 600. O limite conumido sera 600 - 300, e o saldo sera completamente consumido
                 // Nao é necessario contemplar aqui o caso em que o limiteConsumido ultrapasse o limiteOferecido porque, para a transação ser feita,
                 // o valor retirado tem que estar dentro do limite de retirada.
-                limiteConsumido += valor - saldo;
+                double valorAlemDoLimite = valor - saldo;
+                limiteConsumido += valorAlemDoLimite;
                 saldo = 0;
 
                 // Toda vez que um valor é retirado, que faça com que o limite seja consumido, 
-                // O valor dos juros é aumentado com base no valor total do limite consumido
+                // O valor dos juros é aumentado com base no valor que foi retirado que ultrapassou o saldo
                 // A IMPLEMENTAÇÂO ERA PRA SER ASSIM?
-                juros += limiteConsumido*(taxaJuros/100.0); 
+                juros += valorAlemDoLimite*(taxaJuros/100.0); 
             }
             return true;
         }
